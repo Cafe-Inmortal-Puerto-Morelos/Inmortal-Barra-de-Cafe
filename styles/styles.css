@@ -58,7 +58,27 @@ body {
 .theme-toggle:hover {
     transform: scale(1.1);
 }
+/* --- ESTILO DEL BOTÓN DE IDIOMA --- */
+.lang-toggle {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem; /* Lo ponemos a la izquierda */
+    background: none;
+    border: 2px solid var(--text-main);
+    color: var(--text-main);
+    font-size: 0.9rem;
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
 
+.lang-toggle:hover {
+    background-color: var(--text-main);
+    color: var(--bg-color);
+}
 
 .header {
     text-align: center;
@@ -73,7 +93,27 @@ body {
     display: block;
     border-radius: 10px;
 }
+/* --- ÍCONOS SUPERIORES DE LA MARCA --- */
+.brand-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem; /* Espacio entre cada ícono */
+    margin-bottom: 0.5rem; /* Separación con el título INMORTAL */
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
 
+.brand-icons i {
+    /* Le damos una ligera opacidad para que no compitan tanto con el título principal */
+    opacity: 0.85; 
+}
+
+.brand-icons .dash {
+    font-weight: 900;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 0.2rem;
+}
 .header h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.2rem;
@@ -83,10 +123,18 @@ body {
 }
 
 .header .subtitle {
+    /* Colores invertidos para hacer el listón */
+    background-color: var(--text-main);
+    color: var(--bg-color); 
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
     font-weight: bold;
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    font-family: 'Courier Prime', monospace;
+    /* Un pequeño borde para darle textura */
+    border: 2px solid var(--text-main);
 }
 
 .header .location {

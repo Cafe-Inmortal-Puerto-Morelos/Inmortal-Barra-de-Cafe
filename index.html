@@ -16,18 +16,31 @@
     <script type="module" src="scripts/main.js" defer></script>
 </head>
 <body>
-
+    <button id="lang-toggle" class="lang-toggle" aria-label="Cambiar idioma">
+        EN
+    </button>
     <!-- Botón de Modo Oscuro -->
     <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
         <i class="fa-solid fa-moon"></i>
     </button>
 
     <div class="header">
+        <!-- Tu logo/parca actual se queda igual -->
         <!-- Reemplaza la etiqueta <img ...> por esto: -->
-    <video src="assets/animacion.mp4" class="logo-img" autoplay loop muted playsinline></video>
+<video src="assets/animacion.mp4" class="logo-img" autoplay loop muted playsinline></video>
         
+        <!-- NUEVO: Íconos de la marca (Semilla, Flama, Calavera) -->
+        <div class="brand-icons">
+            <span class="dash">-</span>
+            <i class="fa-solid fa-seedling"></i>
+            <i class="fa-solid fa-fire"></i>
+            <i class="fa-solid fa-skull"></i>
+            <span class="dash">-</span>
+        </div>
+
         <h1>INMOR&dagger;AL</h1>
-        <p class="subtitle">- BARRA DE CAFÉ -</p>
+        
+        <p class="subtitle" >- BARRA DE CAFÉ -</p>
         <p class="location">Puerto Morelos, Q.Roo</p>
     </div>
 
@@ -35,8 +48,9 @@
         
         <a href="assets/menu.pdf" target="_blank" rel="noopener noreferrer" class="link-btn">
             <i class="fa-solid fa-skull"></i>
-            Menú Digital
+            <span data-i18n="menu">Menú Digital</span>
         </a>
+
         <a href="https://www.instagram.com/inmortalcafe?igsh=YnFuOTExNTFsNTF0" class="link-btn">
             <i class="fa-brands fa-instagram"></i>
             Instagram
@@ -49,15 +63,14 @@
 
         <a href="https://www.google.com/maps/search/?api=1&query=Inmortal+Cafe+Puerto+Morelos" class="link-btn">
             <i class="fa-solid fa-location-dot"></i>
-            Cómo llegar (Maps)
+            <span data-i18n="location">Cómo llegar (Maps)</span>
         </a>
         
-        <a href="#" class="link-btn" onclick="copiarWifi(); return false;">
+        <a href="#" id="wifi-btn" class="link-btn">
             <i class="fa-solid fa-wifi"></i>
-            Conectarse al Wi-Fi
+            <span data-i18n="wifi">Conectarse al Wi-Fi</span>
         </a>
     </div>
-
     <div class="footer">
         <p><i class="fa-solid fa-microchip"></i> Powered by NFC</p>
     </div>
