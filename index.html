@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INMOR†AL - Barra de Café</title>
+    
+    <!-- Fuentes e Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Montserrat:wght@600;900&display=swap" rel="stylesheet">
+    
+    <!-- Hoja de estilos externa -->
+    <link rel="stylesheet" href="styles/styles.css">
+    <script type="module" src="main.js" defer></script>
+</head>
+<body>
+<button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+    <i class="fa-solid fa-moon"></i>
+</button>
+    <div class="header">
+        <img src="logo.jpg" alt="Logo Inmortal" class="logo-img" onerror="this.style.display='none'">
+        
+        <h1>INMOR&dagger;AL</h1>
+        <p class="subtitle">- BARRA DE CAFÉ -</p>
+        <p class="location">Puerto Morelos, Q.Roo</p>
+    </div>
+
+    <div class="links-container">
+        <a href="#" class="link-btn" onclick="alert('DEMO: Al presionar aquí, el cliente verá el menú digital de la cafetería.'); return false;">
+            <i class="fa-solid fa-skull"></i>
+            Menú Digital
+        </a>
+
+        <a href="https://www.instagram.com/inmortalcafe?igsh=YnFuOTExNTFsNTF0" class="link-btn">
+            <i class="fa-brands fa-instagram"></i>
+            Instagram
+        </a>
+
+        <a href="https://www.facebook.com/share/1DVLbSd2Kc/" class="link-btn">
+            <i class="fa-brands fa-facebook"></i>
+            Facebook
+        </a>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=Inmortal+Cafe+Puerto+Morelos" class="link-btn">
+            <i class="fa-solid fa-location-dot"></i>
+            Cómo llegar (Maps)
+        </a>
+        
+        <a href="#" class="link-btn" onclick="alert('DEMO: El celular del cliente se conectará automáticamente a tu red Wi-Fi sin pedir contraseña.'); return false;">
+            <i class="fa-solid fa-wifi"></i>
+            Conectarse al Wi-Fi
+        </a>
+
+        <a href="#" class="link-btn" onclick="alert('DEMO: Aquí se abrirá la cuenta del cliente para que pueda pagar con Mercado Pago, Clip o tarjeta.'); return false;">
+            <i class="fa-solid fa-credit-card"></i>
+            Pago de cuenta
+        </a>
+    </div>
+
+    <div class="footer">
+        <p><i class="fa-solid fa-microchip"></i> Powered by NFC</p>
+    </div>
+
+</body>
+</html>

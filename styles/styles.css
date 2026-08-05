@@ -1,0 +1,140 @@
+:root {
+    /* Variables Modo Claro (Por defecto) */
+    --bg-color: #fdfdfd;
+    --text-main: #111111;
+    --border-color: #111111;
+    --btn-bg: #ffffff;
+    --btn-active: #f0f0f0;
+    --dot-color: #e5e5e5;
+    --location-color: #555555;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body.dark-mode {
+    --bg-color: #121212;
+    --text-main: #fdfdfd;
+    --border-color: #fdfdfd;
+    --btn-bg: #1e1e1e;
+    --btn-active: #2a2a2a;
+    --dot-color: #333333;
+    --location-color: #aaaaaa;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2.5rem 1.5rem;
+    font-family: 'Courier Prime', monospace;
+    /* Actualizamos para usar la variable en los puntitos */
+    background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+    background-size: 20px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.theme-toggle {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+
+.header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.logo-img {
+    width: 120px;
+    height: auto;
+    margin: 0 auto 1rem auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.header .subtitle {
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.3rem;
+}
+
+.header .location {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.links-container {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.link-btn {
+    background-color: var(--btn-bg);
+    color: var(--text-main);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border: 3px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    box-shadow: 4px 4px 0px var(--border-color);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.link-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px var(--border-color);
+    background-color: var(--btn-active);
+}
+
+.link-btn i {
+    font-size: 1.4rem;
+    width: 40px;
+    color: var(--text-main);
+}
+
+.footer {
+    margin-top: auto;
+    padding-top: 3rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
