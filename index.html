@@ -9,16 +9,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Montserrat:wght@600;900&display=swap" rel="stylesheet">
     
-    <!-- Hoja de estilos externa -->
+    <!-- Hoja de estilos externa (Actualizada a la nueva carpeta) -->
     <link rel="stylesheet" href="styles/styles.css">
-    <script type="module" src="main.js" defer></script>
+
+    <!-- Script principal como módulo (Actualizado a la nueva carpeta) -->
+    <script type="module" src="scripts/main.js" defer></script>
 </head>
 <body>
-<button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
-    <i class="fa-solid fa-moon"></i>
-</button>
+
+    <!-- Botón de Modo Oscuro -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
     <div class="header">
-        <img src="logo.jpg" alt="Logo Inmortal" class="logo-img" onerror="this.style.display='none'">
+        <!-- Reemplaza la etiqueta <img ...> por esto: -->
+    <video src="assets/animacion.mp4" class="logo-img" autoplay loop muted playsinline></video>
         
         <h1>INMOR&dagger;AL</h1>
         <p class="subtitle">- BARRA DE CAFÉ -</p>
@@ -26,11 +32,11 @@
     </div>
 
     <div class="links-container">
-        <a href="#" class="link-btn" onclick="alert('DEMO: Al presionar aquí, el cliente verá el menú digital de la cafetería.'); return false;">
+        
+        <a href="assets/menu.pdf" target="_blank" rel="noopener noreferrer" class="link-btn">
             <i class="fa-solid fa-skull"></i>
             Menú Digital
         </a>
-
         <a href="https://www.instagram.com/inmortalcafe?igsh=YnFuOTExNTFsNTF0" class="link-btn">
             <i class="fa-brands fa-instagram"></i>
             Instagram
@@ -46,14 +52,9 @@
             Cómo llegar (Maps)
         </a>
         
-        <a href="#" class="link-btn" onclick="alert('DEMO: El celular del cliente se conectará automáticamente a tu red Wi-Fi sin pedir contraseña.'); return false;">
+        <a href="#" class="link-btn" onclick="copiarWifi(); return false;">
             <i class="fa-solid fa-wifi"></i>
             Conectarse al Wi-Fi
-        </a>
-
-        <a href="#" class="link-btn" onclick="alert('DEMO: Aquí se abrirá la cuenta del cliente para que pueda pagar con Mercado Pago, Clip o tarjeta.'); return false;">
-            <i class="fa-solid fa-credit-card"></i>
-            Pago de cuenta
         </a>
     </div>
 

@@ -43,6 +43,7 @@ body {
     background-size: 20px 20px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 .theme-toggle {
     position: absolute;
     top: 1.5rem;
