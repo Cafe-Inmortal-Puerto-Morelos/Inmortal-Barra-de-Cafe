@@ -61,7 +61,7 @@ body::before {
     background-repeat: repeat;
     
     /* Bajar la opacidad al 5% hace que sea un detalle sutil y elegante */
-    opacity: 0.10; 
+    opacity: .06; 
     
     z-index: -1; /* Lo mandamos al fondo de todo */
     pointer-events: none; /* Evita que el fondo bloquee los clics de la pantalla */
