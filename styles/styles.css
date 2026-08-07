@@ -1,3 +1,6 @@
+/* =========================================
+   1. VARIABLES GLOBALES (Temas)
+   ========================================= */
 :root {
     /* Variables Modo Claro (Por defecto) */
     --bg-color: #fdfdfd;
@@ -9,12 +12,8 @@
     --location-color: #555555;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 body.dark-mode {
+    /* Variables Modo Oscuro */
     --bg-color: #121212;
     --text-main: #fdfdfd;
     --border-color: #fdfdfd;
@@ -24,11 +23,15 @@ body.dark-mode {
     --location-color: #aaaaaa;
 }
 
+/* =========================================
+   2. RESET Y ESTILOS BASE
+   ========================================= */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
@@ -38,31 +41,39 @@ body {
     min-height: 100vh;
     padding: 2.5rem 1.5rem;
     font-family: 'Courier Prime', monospace;
-    /* Actualizamos para usar la variable en los puntitos */
-    background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
-    background-size: 20px 20px;
+    
+    /* Quitamos el fondo de puntitos anterior */
+    
+    /* Agregamos position: relative para poder poner la capa del patrón encima */
+    position: relative; 
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-.theme-toggle {
+body::before {
+    content: "";
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    background: none;
-    border: none;
-    color: var(--text-main);
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+    top: 0; left: 0; right: 0; bottom: 0;
+    
+    /* Pon aquí el nombre exacto de la imagen que te genere la IA */
+    background-image: url('../assets/patron-inmortal.png'); 
+    
+    /* Ajusta este valor: entre más pequeño, más chiquitas se ven las figuras */
+    background-size: 250px; 
+    background-repeat: repeat;
+    
+    /* Bajar la opacidad al 5% hace que sea un detalle sutil y elegante */
+    opacity: 0.10; 
+    
+    z-index: -1; /* Lo mandamos al fondo de todo */
+    pointer-events: none; /* Evita que el fondo bloquee los clics de la pantalla */
 }
-.theme-toggle:hover {
-    transform: scale(1.1);
-}
-/* --- ESTILO DEL BOTÓN DE IDIOMA --- */
+
+/* =========================================
+   3. BOTONES FLOTANTES (Idioma y Tema)
+   ========================================= */
 .lang-toggle {
     position: absolute;
     top: 1.5rem;
-    left: 1.5rem; /* Lo ponemos a la izquierda */
+    left: 1.5rem; /* Alineado a la izquierda */
     background: none;
     border: 2px solid var(--text-main);
     color: var(--text-main);
@@ -80,105 +91,200 @@ body {
     color: var(--bg-color);
 }
 
+.theme-toggle {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem; /* Alineado a la derecha */
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* =========================================
+   4. CABECERA Y LOGOS
+   ========================================= */
 .header {
-    text-align: center;
-    margin-bottom: 2.5rem;
     width: 100%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Ponemos el gap en 0 para que no agregue espacio extra */
+    gap: 1.5rem; 
+    margin-bottom: 2.5rem; 
 }
 
 .logo-img {
-    width: 120px;
+    width: 220px; 
+    max-width: 100%; 
     height: auto;
-    margin: 0 auto 1rem auto;
     display: block;
-    border-radius: 10px;
+    transition: filter 0.3s ease;
 }
-/* --- ÍCONOS SUPERIORES DE LA MARCA --- */
-.brand-icons {
+
+.title-img {
+    width: 320px; 
+    max-width: 90%; 
+    height: auto;
+    display: block;
+    transition: filter 0.3s ease;
+    
+    /* MAGIA NEGATIVA: Nos comemos el espacio transparente gigante */
+    /* Jala la imagen hacia arriba acercándola a la calavera */
+    margin-top: -3.5rem;  
+    /* Jala la imagen de Puerto Morelos hacia arriba */
+    margin-bottom: -5rem; 
+}
+
+.location-img {
+    width: 300px; /* Hazla más pequeña que el título principal para mantener jerarquía */
+    max-width: 80%;
+    height: auto;
+    display: block;
+    transition: filter 0.3s ease;
+    margin-bottom: -7rem;
+}
+
+/* Filtro para invertir los 3 SVGs a blanco en modo oscuro */
+body.dark-mode .logo-img,
+body.dark-mode .title-img,
+body.dark-mode .location-img {
+    filter: invert(1) grayscale(1) brightness(2);
+}
+body.dark-mode::before {
+    filter: invert(1);
+    /* Puedes subir la opacidad en modo oscuro si sientes que se pierde mucho el diseño */
+    opacity: 0.08; 
+}
+
+/* =========================================
+   5. BOTONES DE ENLACES (Menú, Redes, WiFi)
+   ========================================= */
+.links-container {
+    width: 100%;
+    /* Lo hacemos un poco más ancho para que luzca bien la pincelada */
+    max-width: 420px; 
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* --- ESTRUCTURA GENERAL DEL BOTÓN --- */
+.link-btn {
+    display: flex;
+    align-items: center;
+    gap: 0; 
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    /* Suavizamos un poco más la transición para que se vea más fluido */
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.link-btn:active {
+    transform: translateY(2px) scale(0.98); 
+}
+
+.link-btn:hover, .link-btn:active {
+    transform: scale(1.03); 
+}
+
+/* --- EL CÍRCULO DEL ÍCONO --- */
+.link-btn .icon-wrapper {
+    width: 65px;
+    height: 65px;
+    background-color: var(--bg-color);
+    border: 3px solid var(--text-main);
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.8rem; /* Espacio entre cada ícono */
-    margin-bottom: 0.5rem; /* Separación con el título INMORTAL */
-    font-size: 1.1rem;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Para los íconos de FontAwesome (Instagram, FB, etc.) */
+.link-btn .icon-wrapper i {
+    font-size: 1.8rem;
     color: var(--text-main);
+    transition: color 0.3s ease;
 }
 
-.brand-icons i {
-    /* Le damos una ligera opacidad para que no compitan tanto con el título principal */
-    opacity: 0.85; 
-}
-
-.brand-icons .dash {
-    font-weight: 900;
-    font-family: 'Montserrat', sans-serif;
-    margin: 0 0.2rem;
-}
-.header h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.2rem;
-    font-weight: 900;
-    letter-spacing: 4px;
-    margin-bottom: 0.5rem;
-}
-
-.header .subtitle {
-    /* Colores invertidos para hacer el listón */
-    background-color: var(--text-main);
-    color: var(--bg-color); 
-    display: inline-block;
-    padding: 0.4rem 1.2rem;
-    font-weight: bold;
-    font-size: 1rem;
-    letter-spacing: 3px;
-    margin-bottom: 1rem;
-    font-family: 'Courier Prime', monospace;
-    /* Un pequeño borde para darle textura */
-    border: 2px solid var(--text-main);
-}
-
-.header .location {
-    font-size: 0.9rem;
-    color: #555;
-}
-
-.links-container {
+/* Para el nuevo SVG personalizado (Calavera) */
+.link-btn .icon-wrapper .custom-icon {
     width: 100%;
-    max-width: 380px;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+    height: 100%;
+    object-fit: contain;
+    /* MAGIA: Esto le hace "zoom" a la imagen desde su centro. 
+       Si sigue pequeña, súbelo a 1.8, 2.0 o 2.5 hasta que llene el círculo */
+    transform: scale(1.6); 
+    transition: filter 0.3s ease;
 }
 
-.link-btn {
-    background-color: var(--btn-bg);
-    color: var(--text-main);
-    text-decoration: none;
-    padding: 1rem 1.5rem;
-    border: 3px solid var(--border-color);
-    border-radius: 8px;
+/* Invertir el ícono personalizado en modo oscuro */
+body.dark-mode .link-btn .icon-wrapper .custom-icon {
+    filter: invert(1) grayscale(1) brightness(2);
+}
+
+/* --- LA BASE DE LA PINCELADA --- */
+.link-btn .text-wrapper {
+    flex-grow: 1;
+    background-color: var(--text-main);
+    color: var(--bg-color);
+    padding: 0.6rem 1.5rem;
+    
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.3rem; 
+    font-weight: 700;
+    letter-spacing: 2px;
+    
     display: flex;
     align-items: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    box-shadow: 4px 4px 0px var(--border-color);
-    transition: all 0.2s ease;
-    cursor: pointer;
+    justify-content: center;
+    margin-left: 0; 
+    
+    /* 4. VOLVEMOS AL 100% PARA QUE CALQUE LA NUEVA CAJA DELGADA */
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.link-btn:active {
-    transform: translate(4px, 4px);
-    box-shadow: 0px 0px 0px var(--border-color);
-    background-color: var(--btn-active);
+.link-btn .brush-1 {
+    -webkit-mask-image: url('../assets/pincelada-1.svg'); 
+    mask-image: url('../assets/pincelada-1.svg');
 }
 
-.link-btn i {
-    font-size: 1.4rem;
-    width: 40px;
-    color: var(--text-main);
+.link-btn .brush-2 {
+    -webkit-mask-image: url('../assets/pincelada-2.svg'); 
+    mask-image: url('../assets/pincelada-2.svg');
 }
 
+/* AQUÍ APLICAMOS LA MAGIA MÁS FUERTE PARA EL BRUSH 3 */
+.link-btn .brush-3 {
+    -webkit-mask-image: url('../assets/pincelada.svg'); 
+    mask-image: url('../assets/pincelada.svg');
+    
+    /* Ahora sí el navegador obedecerá estos tamaños porque la regla es más fuerte */
+    -webkit-mask-size: 100% 300%;
+    mask-size: 100% 300%;
+}
+
+/* =========================================
+   6. PIE DE PÁGINA
+   ========================================= */
 .footer {
     margin-top: auto;
     padding-top: 3rem;

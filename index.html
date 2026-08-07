@@ -42,8 +42,7 @@
     
     <!-- Fuentes e Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Montserrat:wght@600;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Montserrat:wght@600;900&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
     <!-- Hoja de estilos externa (Actualizada a la nueva carpeta) -->
     <link rel="stylesheet" href="styles/styles.css">
 
@@ -60,51 +59,66 @@
     </button>
 
     <div class="header">
-        <!-- Tu logo/parca actual se queda igual -->
-        <!-- Reemplaza la etiqueta <img ...> por esto: -->
-<video src="assets/animacion.mp4" class="logo-img" autoplay loop muted playsinline></video>
-        
-        <!-- NUEVO: Íconos de la marca (Semilla, Flama, Calavera) -->
-        <div class="brand-icons">
-            <span class="dash">-</span>
-            <i class="fa-solid fa-seedling"></i>
-            <i class="fa-solid fa-fire"></i>
-            <i class="fa-solid fa-skull"></i>
-            <span class="dash">-</span>
-        </div>
-
-        <h1>INMOR&dagger;AL</h1>
-        
-        <p class="subtitle" >- BARRA DE CAFÉ -</p>
-        <p class="location">Puerto Morelos, Q.Roo</p>
+        <img src="assets/calavera.svg" alt="Calavera Inmortal" class="logo-img">
+        <img src="assets/inmortal-texto.svg" alt="Inmortal Barra y Tostador" class="title-img">
+        <!-- NUEVA CLASE PARA LA TERCERA IMAGEN -->
+        <img src="assets/pm.svg" alt="Puerto Morelos" class="location-img">
     </div>
-
+    
     <div class="links-container">
         
         <a href="assets/menu.pdf" target="_blank" rel="noopener noreferrer" class="link-btn">
-            <i class="fa-solid fa-skull"></i>
-            <span data-i18n="menu">Menú Digital</span>
+            <div class="icon-wrapper">
+                <img src="assets/icono-calavera.svg" alt="Menú" class="custom-icon">
+            </div>
+            <div class="text-wrapper brush-1">
+                <span data-i18n="menu">Menú Digital</span>
+            </div>
+        </a>
+        <a href="https://maps.app.goo.gl/hvdMJ1LeCc3p4hW59" target="_blank" rel="noopener noreferrer" class="link-btn">
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="text-wrapper brush-3">
+                <span data-i18n="review">Déjanos una reseña</span>
+            </div>
         </a>
 
-        <a href="https://www.instagram.com/inmortalcafe?igsh=YnFuOTExNTFsNTF0" class="link-btn">
-            <i class="fa-brands fa-instagram"></i>
-            Instagram
+        <a href="https://www.instagram.com/inmortalcafe?igsh=YnFuOTExNTFsNTF0" target="_blank" rel="noopener noreferrer" class="link-btn">
+            <div class="icon-wrapper">
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div class="text-wrapper brush-2">
+                Instagram
+            </div>
         </a>
 
-        <a href="https://www.facebook.com/share/1DVLbSd2Kc/" class="link-btn">
-            <i class="fa-brands fa-facebook"></i>
-            Facebook
-        </a>
-
-        <a href="https://www.google.com/maps/search/?api=1&query=Inmortal+Cafe+Puerto+Morelos" class="link-btn">
-            <i class="fa-solid fa-location-dot"></i>
-            <span data-i18n="location">Cómo llegar (Maps)</span>
+        <a href="https://www.facebook.com/share/1DVLbSd2Kc/" target="_blank" rel="noopener noreferrer" class="link-btn">
+            <div class="icon-wrapper">
+                <i class="fa-brands fa-facebook"></i>
+            </div>
+            <div class="text-wrapper brush-1">
+                Facebook
+            </div>
         </a>
         
         <a href="#" id="wifi-btn" class="link-btn">
-            <i class="fa-solid fa-wifi"></i>
-            <span data-i18n="wifi">Conectarse al Wi-Fi</span>
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-wifi"></i>
+            </div>
+            <div class="text-wrapper brush-2">
+                <span data-i18n="wifi">Conectarse al Wi-Fi</span>
+            </div>
         </a>
+        <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="link-btn">
+            <div class="icon-wrapper">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="text-wrapper brush-1">
+                <span data-i18n="phone">Escríbenos por WhatsApp</span>
+            </div>
+        </a>
+
     </div>
     <div class="footer">
         <p><i class="fa-solid fa-microchip"></i> Powered by NFC</p>

@@ -4,14 +4,17 @@ const translations = {
     es: {
         subtitle: "- BARRA DE CAFÉ -",
         menu: "Menú Digital",
-        location: "Cómo llegar (Maps)",
-        wifi: "Conectarse al Wi-Fi"
+        review: "Dejanos una reseña",
+        wifi: "Conectarse al Wi-Fi",
+        phone: "Escribenos por WhatsApp"
+
     },
     en: {
         subtitle: "- COFFEE BAR -",
         menu: "Digital Menu",
-        location: "Directions (Maps)",
-        wifi: "Connect to Wi-Fi"
+        review: "Leave a Review",
+        wifi: "Connect to Wi-Fi",
+        phone: "Send a WhatsApp Message"
     }
 };
 
