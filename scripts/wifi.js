@@ -10,8 +10,8 @@ export function initWifi() {
             evento.preventDefault(); 
 
             // Datos de prueba (los cambias cuando el cliente te los dé)
-            const networkName = "INMORTAL_CAFE";
-            const password = "PasswordDeLaCafeteria"; 
+            const networkName = "INMORTAL_5G";
+            const password = "INMTCAFE1"; 
             
             // Lógica para copiar al portapapeles
             navigator.clipboard.writeText(password).then(() => {
