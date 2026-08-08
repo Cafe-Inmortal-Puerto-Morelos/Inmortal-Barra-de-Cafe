@@ -138,11 +138,12 @@ body::before {
     display: block;
     transition: filter 0.3s ease;
     justify-self: center;
+    align-self: center;
     /* MAGIA NEGATIVA: Nos comemos el espacio transparente gigante */
     /* Jala la imagen hacia arriba acercándola a la calavera */
     margin-top: -3.5rem;  
     /* Jala la imagen de Puerto Morelos hacia arriba */
-    margin-bottom: -6rem; 
+    margin-bottom: -4.8rem; 
 }
 
 .location-img {
