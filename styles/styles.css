@@ -121,12 +121,14 @@ body::before {
     margin-bottom: 2.5rem; 
 }
 
-.logo-img {
-    width: 220px; 
+.logo-video {
+    width: 220px; /* Mantiene el tamaño original que tenía la calavera */
     max-width: 100%; 
     height: auto;
     display: block;
+    object-fit: contain; /* Evita que el video se estire o deforme */
     transition: filter 0.3s ease;
+    mix-blend-mode: multiply;
 }
 
 .title-img {
@@ -153,10 +155,11 @@ body::before {
 }
 
 /* Filtro para invertir los 3 SVGs a blanco en modo oscuro */
-body.dark-mode .logo-img,
+body.dark-mode .logo-video,
 body.dark-mode .title-img,
 body.dark-mode .location-img {
     filter: invert(1) grayscale(1) brightness(2);
+    mix-blend-mode: screen;
 }
 body.dark-mode::before {
     filter: invert(1);
@@ -199,29 +202,53 @@ body.dark-mode::before {
 
 /* --- EL CÍRCULO DEL ÍCONO --- */
 .link-btn .icon-wrapper {
-    width: 65px;
-    height: 65px;
-    background-color: var(--bg-color);
-    border: 3px solid var(--text-main);
-    border-radius: 10px;
+    width: 75px; 
+    height: 75px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0; 
+    
+    position: relative; /* SÚPER IMPORTANTE: Para anclar el marco aquí */
+    
     display: flex;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease;
+}
+.link-btn .icon-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    
+    /* El color cambiará solito gracias a tu variable de tema */
+    background-color: var(--text-main); 
+    
+    /* USAMOS EL MARCO COMO MÁSCARA */
+    -webkit-mask-image: url('../assets/marco.svg'); 
+    mask-image: url('../assets/marco.svg');
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    
+    z-index: -1; /* Lo mandamos detrás del ícono (estrella, instagram, etc) */
+    transition: background-color 0.3s ease;
 }
 
 /* Para los íconos de FontAwesome (Instagram, FB, etc.) */
 .link-btn .icon-wrapper i {
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* Un poco más chicos para que respiren dentro del dibujo */
     color: var(--text-main);
     transition: color 0.3s ease;
 }
 
 /* Para el nuevo SVG personalizado (Calavera) */
 .link-btn .icon-wrapper .custom-icon {
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 80%;
     object-fit: contain;
     /* MAGIA: Esto le hace "zoom" a la imagen desde su centro. 
        Si sigue pequeña, súbelo a 1.8, 2.0 o 2.5 hasta que llene el círculo */
