@@ -1,26 +1,37 @@
 // scripts/scroll.js
 
 export function initScrollAnimations() {
-    // Configuramos el observador
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            // Si el elemento entra en la pantalla...
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                
-                // Opcional: Dejamos de observarlo para que solo haga la animación una vez
-                observer.unobserve(entry.target); 
-            }
-        });
-    }, {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15 // Se activa cuando el 15% del elemento ya es visible
+    // Verificamos que la librería haya cargado correctamente
+    if (typeof ScrollReveal === 'undefined') return;
+
+    // 1. Configuración base para todas las animaciones
+    const sr = ScrollReveal({
+        distance: '40px', 
+        duration: 800,    
+        easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)', 
+        opacity: 0,       
+        origin: 'bottom', 
+        reset: true       // ¡EL CAMBIO MÁGICO ESTÁ AQUÍ! Se animará siempre.
     });
 
-    // Buscamos todos los elementos que tengan la clase 'fade-up'
-    const elementsToAnimate = document.querySelectorAll('.fade-up');
+    // 2. Animamos las listas de precios (Aparecen una tras otra)
+    sr.reveal('.price-lists img', {
+        interval: 200 
+    });
+
+    // 3. Animamos el mosaico de cafés (El EFECTO CASCADA)
+    sr.reveal('.coffee-grid img', {
+        interval: 150 
+    });
+
+    // 4. Animamos los botones (Si lo usas en el index.html)
+    sr.reveal('.link-btn', {
+        interval: 100
+    });
     
-    // Le decimos al observador que vigile a cada uno de ellos
-    elementsToAnimate.forEach(el => observer.observe(el));
+    // 5. Animamos los títulos 
+    sr.reveal('h2, h3', {
+        distance: '20px',
+        duration: 1000
+    });
 }
