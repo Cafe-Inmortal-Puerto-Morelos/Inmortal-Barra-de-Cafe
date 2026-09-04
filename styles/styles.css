@@ -267,6 +267,18 @@ body.dark-mode::before {
     transform: scale(1.6); 
     transition: filter 0.3s ease;
 }
+.link-btn .icon-wrapper .custom-icon {
+    width: 45px; /* O el tamaño que ya tenías para tu calavera */
+    height: auto;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+/* --- NUEVA REGLA: SOLO PARA EL GRANO --- */
+.link-btn .icon-wrapper .grano-icon {
+    /* Aquí lo haces más pequeño sin afectar a la calavera */
+    width: 22px; 
+}
 
 /* Invertir el ícono personalizado en modo oscuro */
 body.dark-mode .link-btn .icon-wrapper .custom-icon {
@@ -331,4 +343,142 @@ body.dark-mode .link-btn .icon-wrapper .custom-icon {
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
+}
+/* --- MOSAICO DE CAFÉS --- */
+.coffee-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas perfectas */
+    gap: 1rem;
+    width: 100%;
+}
+
+.coffee-grid img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: zoom-in; /* Le dice al usuario de PC que puede hacer zoom */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.coffee-grid img:active {
+    transform: scale(0.95); /* Efecto de hundimiento al tocar en celular */
+}
+
+/* --- EL EFECTO LIGHTBOX (ZOOM) --- */
+.lightbox {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 9999; /* Super alto para tapar los botones flotantes y el header */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo súper oscuro */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+
+#lightbox-img {
+    max-width: 100%;
+    max-height: 90vh; /* Que no se salga de la pantalla verticalmente */
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: white;
+    font-size: 3rem;
+    font-family: sans-serif;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+/* =========================================
+   MENÚ HAMBURGUESA Y DROPDOWN
+   ========================================= */
+.hamburger-btn {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 2000;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    border: 2px solid var(--text-main);
+    border-radius: 8px; /* O puedes usar 0 para un cuadrado rígido */
+    padding: 0.6rem 0.8rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger-btn:active {
+    transform: scale(0.9);
+}
+
+/* El contenedor del menú desplegable */
+.side-menu {
+    position: fixed;
+    top: 5rem; /* Se coloca justo debajo de la hamburguesa */
+    right: 1.5rem;
+    background-color: var(--bg-color);
+    border: 2px solid var(--text-main);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    z-index: 1999;
+    min-width: 150px;
+    
+    /* Configuración de ocultamiento con animación suave */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* La clase que activará el JS para mostrarlo */
+.side-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Los elementos de adentro */
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.2rem;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.menu-item:hover {
+    transform: translateX(-5px);
+    opacity: 0.7;
+}
+
+.menu-item i {
+    font-size: 1.3rem;
 }

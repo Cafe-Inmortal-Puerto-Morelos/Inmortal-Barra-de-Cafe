@@ -6,7 +6,12 @@ const translations = {
         menu: "Menú Digital",
         review: "Dejanos una reseña",
         wifi: "Conectarse al Wi-Fi",
-        phone: "Escribenos por WhatsApp"
+        phone: "Escribenos por WhatsApp",
+        bulk: "Comprar Café",
+        lenguage: "Idioma (EN)",
+        our_coffee: "- Nuestro Café -",
+        back: "Regresar",
+
 
     },
     en: {
@@ -14,7 +19,13 @@ const translations = {
         menu: "Digital Menu",
         review: "Leave a Review",
         wifi: "Connect to Wi-Fi",
-        phone: "Send a WhatsApp Message"
+        phone: "Send a WhatsApp Message",
+        bulk: "Buy Bulk Coffee",
+        language: "Language (ES)",
+        our_coffee: "- Our Coffee -",
+        back: "Go Back",
+        
+    
     }
 };
 
