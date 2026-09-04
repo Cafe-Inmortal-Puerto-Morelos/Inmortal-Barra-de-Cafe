@@ -344,6 +344,8 @@ body.dark-mode .link-btn .icon-wrapper .custom-icon {
     text-align: center;
     text-transform: uppercase;
 }
+
+/*Estilos de A GRANEL*/
 /* --- MOSAICO DE CAFÉS --- */
 .coffee-grid {
     display: grid;
@@ -481,4 +483,18 @@ body.dark-mode .link-btn .icon-wrapper .custom-icon {
 
 .menu-item i {
     font-size: 1.3rem;
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform; /* Truco de rendimiento para celulares */
+}
+
+/* Estado 2: Visible y en su lugar original */
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
 }

@@ -4,6 +4,7 @@ import { initWifi } from './wifi.js';
 import { initLanguage } from './language.js'; // <-- Agregamos esta línea
 import { initLightbox } from './lightbox.js';
 import { initMenu } from './menu.js';
+import { initScrollAnimations } from './scroll.js';
 document.addEventListener('DOMContentLoaded', () => {
     
     initDarkMode();
@@ -11,4 +12,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initLanguage(); // <-- Inicializamos el módulo
     initLightbox();
     initMenu();
+    initScrollAnimations(); // <-- Inicializamos las animaciones de scroll
 });
