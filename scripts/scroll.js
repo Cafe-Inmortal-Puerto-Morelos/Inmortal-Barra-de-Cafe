@@ -34,4 +34,7 @@ export function initScrollAnimations() {
         distance: '20px',
         duration: 1000
     });
+    sr.reveal('.events-list img', {
+        interval: 200 
+    });
 }

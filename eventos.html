@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos | Inmortal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Montserrat:wght@600;900&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    
+    <!-- Librería ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script type="module" src="scripts/main.js" defer></script>
+</head>
+<body>
+
+    <!-- MENÚ HAMBURGUESA -->
+    <button id="hamburger-btn" class="hamburger-btn" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    <nav id="side-menu" class="side-menu">
+        <a href="index.html" class="menu-item">
+            <i class="fa-solid fa-arrow-left"></i> 
+            <span data-i18n="back">Regresar</span>
+        </a>
+        <button id="lang-toggle" class="menu-item">
+            <i class="fa-solid fa-globe"></i> 
+            <span data-i18n="language">Idioma (EN)</span>
+        </button>
+        <button id="theme-toggle" class="menu-item">
+            <i class="fa-solid fa-moon"></i> 
+            <span data-i18n="theme">Tema</span>
+        </button>
+    </nav>
+
+    <!-- ENCABEZADO -->
+    <div class="header">
+        <video class="logo-video" autoplay loop muted playsinline>
+            <source src="assets/animacion.mp4" type="video/mp4">
+        </video>
+        <img src="assets/inmortal-texto.svg" alt="Inmortal Barra y Tostador" class="title-img">
+        <img src="assets/pm.svg" alt="Puerto Morelos" class="location-img">
+    </div>
+
+    <!-- CONTENEDOR DE EVENTOS -->
+    <div class="store-container" style="width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 1.5rem; align-items: center; margin-top: 1rem; padding-bottom: 2rem;">
+        
+        <h2 data-i18n="events_title" style="font-family: 'Amatic SC', cursive; font-size: 2rem; text-align: center; letter-spacing: 2px;">
+            - Próximos Eventos -
+        </h2>
+
+        <!-- LISTA DE FLYERS -->
+        <div class="events-list" style="width: 100%; display: flex; flex-direction: column; gap: 1.5rem;">
+            <!-- La clase 'zoomable' activa tu Lightbox automáticamente -->
+            <img src="assets/evento-1.jpg" alt="Evento 1" class="zoomable" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+            <img src="assets/evento-2.jpg" alt="Evento 2" class="zoomable" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+            <img src="assets/evento-3.jpg" alt="Evento 3" class="zoomable" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+            <img src="assets/evento-4.jpg" alt="Evento 4" class="zoomable" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+            <img src="assets/evento-5.jpg" alt="Evento 5" class="zoomable" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+        </div>
+
+    </div>
+
+    <!-- EL LIGHTBOX PARA HACER ZOOM -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+</body>
+</html>

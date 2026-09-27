@@ -11,6 +11,8 @@ const translations = {
         lenguage: "Idioma (EN)",
         our_coffee: "- Nuestro Café -",
         back: "Regresar",
+        events: "Eventos",
+        events_title: "- Próximos Eventos -"
 
 
     },
@@ -24,7 +26,8 @@ const translations = {
         language: "Language (ES)",
         our_coffee: "- Our Coffee -",
         back: "Go Back",
-        
+        events: "Upcoming Events",
+        events_title: "- Upcoming Events -"
     
     }
 };
