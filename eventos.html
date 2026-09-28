@@ -73,7 +73,14 @@
     </nav>
 
     <!-- ENCABEZADO -->
-    <div class="header">
+    <div class="header" style="position: relative;">
+        <!-- ========================================== -->
+        <!-- CORONA DE 5 FLORES (DÍA DE MUERTOS)        -->
+        <!-- ========================================== -->
+       <!-- <img src="assets/flor-cempasuchil.svg" alt="Decoración" class="flor-decor flor-izq fade-up">
+        <img src="assets/flor-cempasuchil.svg" alt="Decoración" class="flor-decor flor-der fade-up">
+        <img src="assets/flor-cempasuchil.svg" alt="Decoración" class="flor-decor flor-centro fade-up">
+        <!-- Tu código original -->
         <video class="logo-video" autoplay loop muted playsinline>
             <source src="assets/animacion.mp4" type="video/mp4">
         </video>
@@ -89,13 +96,93 @@
         </h2>
 
         <!-- LISTA DE FLYERS -->
-        <div class="events-list" style="width: 100%; display: flex; flex-direction: column; gap: 1.5rem;">
-            <!-- La clase 'zoomable' activa tu Lightbox automáticamente -->
-            <img src="assets/evento-1.jpg" alt="Evento 1" class="zoomable" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-            <img src="assets/evento-2.jpg" alt="Evento 2" class="zoomable" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-            <img src="assets/evento-3.jpg" alt="Evento 3" class="zoomable" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-            <img src="assets/evento-4.jpg" alt="Evento 4" class="zoomable" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-            <img src="assets/evento-5.jpg" alt="Evento 5" class="zoomable" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+        <!-- ========================================== -->
+        <!-- AGENDA DE EVENTOS                          -->
+        <!-- ========================================== -->
+        <div class="agenda-container" style="width: 100%; display: flex; flex-direction: column; gap: 1.5rem;">
+            
+            <!-- EVENTO 1 -->
+            <div class="agenda-item">
+                <div class="agenda-date">
+                    <span class="day">30</span>
+                    <span class="month">SEP</span>
+                </div>
+                <div class="agenda-info">
+                    <h3>Pinta Con Café</h3>
+                    <p><i class="fa-regular fa-clock"></i> 17:00-19:00  hrs</p>
+                    <p><i class="fa-solid fa-ticket"></i> APORTACION $80</p>
+                </div>
+                <div class="agenda-flyer">
+                    <!-- Aquí va la imagen real. Tu lightbox ya sabe qué hacer con la clase 'zoomable' -->
+                    <img src="assets/evento-1.jpg" alt="Flyer Cata" class="zoomable">
+                    <div class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+            </div>
+
+            <!-- EVENTO 2 -->
+            <div class="agenda-item">
+                <div class="agenda-date">
+                    <span class="day">01</span>
+                    <span class="month">OCT</span>
+                </div>
+                <div class="agenda-info">
+                    <h3>Intercambio De Libros</h3>
+                    <p><i class="fa-regular fa-clock"></i> 16:00-20:00 hrs</p>
+                    <p><i class="fa-solid fa-ticket"></i> ENTRADA LIBRE </p>
+                </div>
+                <div class="agenda-flyer">
+                    <img src="assets/evento-2.jpg" alt="Flyer Taller" class="zoomable">
+                    <div class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+            </div>
+
+            <!-- EVENTO 3 -->
+            <div class="agenda-item">
+                <div class="agenda-date">
+                    <span class="day">03</span>
+                    <span class="month">OCT</span>
+                </div>
+                <div class="agenda-info">
+                    <h3>Coffe Run & DJ Session</h3>
+                    <p><i class="fa-regular fa-clock"></i> 7:00 hrs</p>
+                    <p><i class="fa-solid fa-ticket"></i> CUPO LIMITADO</p>
+                </div>
+                <div class="agenda-flyer">
+                    <img src="assets/evento-3.jpg" alt="Flyer Día de Muertos" class="zoomable">
+                    <div class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+            </div>
+            <div class="agenda-item">
+                <div class="agenda-date">
+                    <span class="day">05</span>
+                    <span class="month">OCT</span>
+                </div>
+                <div class="agenda-info">
+                    <h3>Aniversario Promos!!!!</h3>
+                    <p><i class="fa-regular fa-clock"></i> TODO EL DÍA!!!!!</p>
+                    <p><i class="fa-solid fa-ticket"></i> NO TE LO PIERDAS</p>
+                </div>
+                <div class="agenda-flyer">
+                    <img src="assets/evento-4.jpg" alt="Flyer Concierto de Jazz" class="zoomable">
+                    <div class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+            </div>
+            <div class="agenda-item">
+                <div class="agenda-date">
+                    <span class="day">07 </span>
+                    <span class="month">OCT</span>
+                </div>
+                <div class="agenda-info">
+                    <h3>Taller de Joyería y Bisutería</h3>
+                    <p><i class="fa-regular fa-clock"></i>17:00 hrs</p>
+                    <p><i class="fa-solid fa-ticket"></i> APORTACION VOLUNTARIA</p>
+                </div>
+                <div class="agenda-flyer">
+                    <img src="assets/evento-5.jpg" alt="Flyer Taller de Latte Art" class="zoomable">
+                    <div class="zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+            </div>
+
         </div>
 
     </div>

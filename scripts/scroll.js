@@ -37,4 +37,7 @@ export function initScrollAnimations() {
     sr.reveal('.events-list img', {
         interval: 200 
     });
+    sr.reveal('.agenda-item', {
+        interval: 150 
+    });
 }
